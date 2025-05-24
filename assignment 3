@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from itertools import groupby
+
+# Input string S
+S = input()
+
+# Grouping the characters and creating the output
+compressed_string = [(len(list(group)), int(key)) for key, group in groupby(S)]
+
+# Formatting output
+formatted_output = ' '.join(f'({count}, {value})' for count, value in compressed_string)
+
+# Printing the result
+print(formatted_output)
